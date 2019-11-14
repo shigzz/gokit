@@ -2,7 +2,7 @@ package tree
 
 import "fmt"
 
-func preOrderTree(root *Node) {
+func preOrderTree(root *TreeNode) {
 	if root != nil {
 		fmt.Print(root.Val, " ")
 		preOrderTree(root.Left)
@@ -10,7 +10,7 @@ func preOrderTree(root *Node) {
 	}
 }
 
-func inOrderTree(root *Node) {
+func inOrderTree(root *TreeNode) {
 	if root != nil {
 		inOrderTree(root.Left)
 		fmt.Print(root.Val, " ")
@@ -18,7 +18,7 @@ func inOrderTree(root *Node) {
 	}
 }
 
-func postOrderTree(root *Node) {
+func postOrderTree(root *TreeNode) {
 	if root != nil {
 		postOrderTree(root.Left)
 		postOrderTree(root.Right)
@@ -27,7 +27,7 @@ func postOrderTree(root *Node) {
 }
 
 //PrintTree 三种方式遍历二叉树
-func PrintTree(root *Node) {
+func PrintTree(root *TreeNode) {
 	fmt.Print("PreOrder: ")
 	preOrderTree(root)
 	fmt.Println()
