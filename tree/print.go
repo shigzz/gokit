@@ -26,6 +26,31 @@ func postOrderTree(root *TreeNode) {
 	}
 }
 
+//MorrisInOrder morris解法，空间复杂度为O(n)
+func MorrisInOrder(root *TreeNode) {
+	cur := root
+	var pre *TreeNode
+	for cur != nil {
+		if cur.Left != nil {
+			pre = cur.Left
+			for pre.Right != nil && pre.Right != cur {
+				pre = pre.Right
+			}
+			if pre.Right == nil {
+				pre.Right = cur
+				cur = cur.Left
+			} else {
+				pre.Right = nil
+				fmt.Println(cur.Val, " ")
+				cur = cur.Right
+			}
+		} else {
+			fmt.Println(cur.Val, " ")
+			cur = cur.Right
+		}
+	}
+}
+
 //PrintTree 三种方式遍历二叉树
 func PrintTree(root *TreeNode) {
 	fmt.Print("PreOrder: ")
