@@ -71,3 +71,8 @@ func (s *Stack) Top() (interface{}, error) {
 	v := s.elements[s.top]
 	return v, nil
 }
+
+//IsEmpty 判断栈空
+func (s *Stack) IsEmpty() bool {
+	return s.top == -1
+}
