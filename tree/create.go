@@ -1,12 +1,5 @@
 package tree
 
-//TreeNode 二叉树结构体
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 //CreateTree 层序方式
 //接收int数组创建二叉树，-1为nil节点
 func CreateTree(nums []int) *TreeNode {
